@@ -1,0 +1,193 @@
+city,area,latitude,longitude,radius
+Pune,Shivajinagar,18.5308,73.8475,2500
+Pune,Deccan Gymkhana,18.5170,73.8410,2200
+Pune,FC Road,18.5220,73.8417,1800
+Pune,JM Road,18.5217,73.8478,1800
+Pune,Sadashiv Peth,18.5101,73.8493,1800
+Pune,Narayan Peth,18.5150,73.8517,1800
+Pune,Shaniwar Peth,18.5194,73.8553,1800
+Pune,Budhwar Peth,18.5158,73.8587,1800
+Pune,Kasba Peth,18.5211,73.8585,1800
+Pune,Raviwar Peth,18.5147,73.8646,1800
+Pune,Camp,18.5122,73.8794,2500
+Pune,MG Road,18.5130,73.8790,1800
+Pune,Swargate,18.5018,73.8586,2200
+Pune,Mandai,18.5121,73.8566,1600
+Pune,Tilak Road,18.5068,73.8504,1800
+Pune,Kothrud,18.5074,73.8077,3000
+Pune,Karve Nagar,18.4901,73.8166,2500
+Pune,Erandwane,18.5090,73.8310,2200
+Pune,Paud Road,18.5094,73.7898,2500
+Pune,Warje,18.4795,73.8020,3000
+Pune,Bavdhan,18.5115,73.7760,3200
+Pune,Pashan,18.5384,73.7939,3000
+Pune,Aundh,18.5590,73.8075,3000
+Pune,Baner,18.5590,73.7868,3200
+Pune,Balewadi,18.5765,73.7730,3000
+Pune,Sus,18.5527,73.7530,3000
+Pune,Mahalunge,18.5700,73.7550,3000
+Pune,Viman Nagar,18.5679,73.9143,3000
+Pune,Kalyani Nagar,18.5481,73.9033,2500
+Pune,Koregaon Park,18.5362,73.8938,2500
+Pune,Yerwada,18.5526,73.8794,2800
+Pune,Wadgaon Sheri,18.5514,73.9196,2800
+Pune,Chandan Nagar,18.5611,73.9308,2500
+Pune,Kharadi,18.5515,73.9340,3500
+Pune,Wagholi,18.5808,73.9787,4000
+Pune,Lohegaon,18.5959,73.9258,3500
+Pune,Dhanori,18.5904,73.8927,3000
+Pune,Vishrantwadi,18.5742,73.8783,2800
+Pune,Tingre Nagar,18.5757,73.8976,2500
+Pune,Katraj,18.4529,73.8652,3500
+Pune,Bibwewadi,18.4718,73.8665,2500
+Pune,Dhankawadi,18.4659,73.8539,2500
+Pune,Sahakar Nagar,18.4818,73.8501,2200
+Pune,Padmavati,18.4793,73.8580,2200
+Pune,Market Yard,18.4862,73.8696,2200
+Pune,Kondhwa,18.4777,73.8917,3500
+Pune,NIBM Road,18.4687,73.9028,3000
+Pune,Wanowrie,18.4934,73.9007,2500
+Pune,Wanwadi,18.4897,73.8954,2500
+Pune,Lulla Nagar,18.4867,73.8910,2000
+Pune,Undri,18.4570,73.9082,3500
+Pune,Pisoli,18.4444,73.9000,3000
+Pune,Mohammed Wadi,18.4739,73.9150,3000
+Pune,Sinhagad Road,18.4668,73.8191,3500
+Pune,Vadgaon Budruk,18.4676,73.8244,2500
+Pune,Dhayari,18.4417,73.8126,3000
+Pune,Narhe,18.4487,73.8234,3000
+Pune,Ambegaon,18.4504,73.8449,3000
+Pune,Jambhulwadi,18.4440,73.8490,2500
+Pune,Khadakwasla,18.4392,73.7677,3500
+Pune,Uttam Nagar,18.4723,73.7786,3000
+Pune,Hadapsar,18.5089,73.9260,3500
+Pune,Magarpatta,18.5163,73.9325,2500
+Pune,Amanora,18.5163,73.9408,2500
+Pune,Mundhwa,18.5334,73.9326,3000
+Pune,Manjari,18.5064,73.9736,3500
+Pune,Shewalewadi,18.4960,73.9600,3000
+Pune,Phursungi,18.4724,73.9758,3500
+Pune,Bhekrai Nagar,18.4790,73.9560,2500
+Pune,Loni Kalbhor,18.4893,74.0223,4000
+Pune,Wakad,18.5976,73.7896,3500
+Pune,Hinjewadi,18.5913,73.7389,4000
+Pune,Tathawade,18.6200,73.7520,3000
+Pune,Punawale,18.6272,73.7454,3000
+Pune,Ravet,18.6461,73.7395,3500
+Pune,Pimple Saudagar,18.5980,73.7972,3000
+Pune,Pimple Nilakh,18.5721,73.7925,2500
+Pune,Pimple Gurav,18.5899,73.8206,2500
+Pune,Rahatani,18.6088,73.7991,2500
+Pune,Thergaon,18.6155,73.7735,2500
+Pune,Pimpri,18.6298,73.7997,3000
+Pune,Chinchwad,18.6290,73.7816,3000
+Pune,Akurdi,18.6494,73.7707,3000
+Pune,Nigdi,18.6517,73.7611,3000
+Pune,Chikhali,18.6719,73.8279,3500
+Pune,Moshi,18.6738,73.8529,4000
+Pune,Bhosari,18.6294,73.8452,3500
+Pune,Dapodi,18.5818,73.8333,2500
+Pune,Sangvi,18.5773,73.8233,2500
+Pune,Talawade,18.7139,73.8295,3500
+Pune,Dehu Road,18.6772,73.7327,3500
+Mumbai,Colaba,18.9067,72.8147,2200
+Mumbai,Cuffe Parade,18.9120,72.8190,1800
+Mumbai,Fort,18.9340,72.8347,2200
+Mumbai,Ballard Estate,18.9356,72.8394,1600
+Mumbai,Churchgate,18.9322,72.8264,1800
+Mumbai,Nariman Point,18.9256,72.8242,1600
+Mumbai,Marine Lines,18.9440,72.8245,1800
+Mumbai,Kalbadevi,18.9487,72.8309,1800
+Mumbai,Crawford Market,18.9470,72.8346,1800
+Mumbai,Bhuleshwar,18.9510,72.8301,1800
+Mumbai,Girgaon,18.9543,72.8179,2000
+Mumbai,Charni Road,18.9519,72.8188,1800
+Mumbai,Malabar Hill,18.9548,72.7985,2200
+Mumbai,Walkeshwar,18.9476,72.7957,1600
+Mumbai,Grant Road,18.9633,72.8136,2000
+Mumbai,Tardeo,18.9676,72.8141,1800
+Mumbai,Mumbai Central,18.9696,72.8205,2200
+Mumbai,Byculla,18.9750,72.8338,2500
+Mumbai,Mazgaon,18.9686,72.8446,2200
+Mumbai,Sandhurst Road,18.9616,72.8391,1800
+Mumbai,Dongri,18.9622,72.8373,1800
+Mumbai,Mandvi,18.9543,72.8388,1800
+Mumbai,Parel,19.0094,72.8377,2500
+Mumbai,Lower Parel,18.9953,72.8300,2500
+Mumbai,Lalbaug,18.9930,72.8369,1800
+Mumbai,Chinchpokli,18.9870,72.8331,1800
+Mumbai,Sewri,19.0009,72.8540,2200
+Mumbai,Worli,19.0176,72.8162,3000
+Mumbai,Prabhadevi,19.0166,72.8295,2200
+Mumbai,Dadar,19.0178,72.8478,3000
+Mumbai,Shivaji Park,19.0270,72.8380,2200
+Mumbai,Matunga,19.0269,72.8553,2500
+Mumbai,Mahim,19.0353,72.8427,2500
+Mumbai,Sion,19.0424,72.8634,2800
+Mumbai,Dharavi,19.0380,72.8538,2200
+Mumbai,Wadala,19.0176,72.8562,2500
+Mumbai,Antop Hill,19.0208,72.8664,2000
+Mumbai,Chembur,19.0622,72.9005,3500
+Mumbai,Tilak Nagar,19.0685,72.8978,2200
+Mumbai,Chunabhatti,19.0528,72.8697,2000
+Mumbai,Govandi,19.0554,72.9157,2500
+Mumbai,Deonar,19.0471,72.9051,2200
+Mumbai,Mankhurd,19.0490,72.9330,2500
+Mumbai,Trombay,19.0330,72.9200,2800
+Mumbai,Bandra West,19.0596,72.8295,3000
+Mumbai,Bandra East,19.0618,72.8496,2500
+Mumbai,BKC,19.0676,72.8670,2500
+Mumbai,Khar West,19.0697,72.8346,2500
+Mumbai,Khar East,19.0690,72.8480,2200
+Mumbai,Santacruz West,19.0822,72.8375,2500
+Mumbai,Santacruz East,19.0794,72.8610,2500
+Mumbai,Vile Parle West,19.1013,72.8406,2500
+Mumbai,Vile Parle East,19.0968,72.8553,2500
+Mumbai,Juhu,19.1075,72.8263,3000
+Mumbai,Andheri West,19.1363,72.8277,3500
+Mumbai,Andheri East,19.1155,72.8727,3500
+Mumbai,Versova,19.1317,72.8147,2500
+Mumbai,Seven Bungalows,19.1308,72.8176,2000
+Mumbai,Four Bungalows,19.1264,72.8248,2000
+Mumbai,Lokhandwala,19.1437,72.8248,2500
+Mumbai,Oshiwara,19.1486,72.8354,2500
+Mumbai,DN Nagar,19.1264,72.8305,2000
+Mumbai,Amboli,19.1293,72.8434,2200
+Mumbai,Chakala,19.1096,72.8602,2500
+Mumbai,Marol,19.1197,72.8847,2500
+Mumbai,Saki Naka,19.1034,72.8879,2500
+Mumbai,JB Nagar,19.1133,72.8666,2200
+Mumbai,Sahar,19.0974,72.8686,2500
+Mumbai,SEEPZ,19.1261,72.8750,2200
+Mumbai,Jogeshwari West,19.1437,72.8420,2500
+Mumbai,Jogeshwari East,19.1374,72.8600,2500
+Mumbai,Goregaon West,19.1663,72.8526,3000
+Mumbai,Goregaon East,19.1663,72.8730,3000
+Mumbai,Malad West,19.1860,72.8484,3200
+Mumbai,Malad East,19.1833,72.8667,3000
+Mumbai,Kandivali West,19.2058,72.8496,3200
+Mumbai,Kandivali East,19.2058,72.8710,3200
+Mumbai,Borivali West,19.2350,72.8498,3500
+Mumbai,Borivali East,19.2307,72.8567,3500
+Mumbai,Dahisar West,19.2494,72.8596,3000
+Mumbai,Dahisar East,19.2560,72.8651,3000
+Mumbai,Gorai,19.2445,72.7835,3200
+Mumbai,IC Colony,19.2453,72.8508,2200
+Mumbai,Eksar,19.2359,72.8496,2200
+Mumbai,Shimpoli,19.2239,72.8482,2200
+Mumbai,Kurla,19.0726,72.8845,3000
+Mumbai,Vidyavihar,19.0798,72.8961,2200
+Mumbai,Ghatkopar West,19.0896,72.9081,2800
+Mumbai,Ghatkopar East,19.0854,72.9080,2800
+Mumbai,Asalfa,19.0959,72.9008,2200
+Mumbai,Powai,19.1176,72.9060,3500
+Mumbai,Chandivali,19.1083,72.8978,2500
+Mumbai,Hiranandani Powai,19.1187,72.9117,2200
+Mumbai,Vikhroli West,19.1117,72.9281,2500
+Mumbai,Vikhroli East,19.1050,72.9407,2500
+Mumbai,Kanjurmarg,19.1294,72.9320,2500
+Mumbai,Bhandup West,19.1511,72.9372,3000
+Mumbai,Bhandup East,19.1466,72.9484,2500
+Mumbai,Nahur,19.1562,72.9445,2200
+Mumbai,Mulund West,19.1726,72.9425,3500
+Mumbai,Mulund East,19.1686,72.9564,3000

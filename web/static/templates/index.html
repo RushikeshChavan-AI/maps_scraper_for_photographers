@@ -69,8 +69,33 @@
                         <summary>Location Settings</summary>
                         <fieldset>
                             <div class="form-group">
+                                <label for="search-area">Search Area:</label>
+                                <select id="search-area" name="search-area" onchange="applySearchArea(this)">
+                                    <option value="">Manual coordinates</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="zoom-preset">Zoom Preset:</label>
+                                <select id="zoom-preset" onchange="applyZoomPreset(this)">
+                                    <option value="13">Wide area</option>
+                                    <option value="14">Neighborhood</option>
+                                    <option value="16" selected>Street detail</option>
+                                    <option value="18">Lane detail</option>
+                                    <option value="20">Close scan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="zoom">Zoom:</label>
-                                <input type="number" id="zoom" name="zoom" value="{{.Zoom}}">
+                                <input type="number" id="zoom" name="zoom" min="1" max="21" value="{{.Zoom}}">
+                            </div>
+                            <div class="form-group">
+                                <label>Zoom Variations:</label>
+                                <div class="checkbox-grid">
+                                    <label><input type="checkbox" name="zoom-variants" value="14"> 14</label>
+                                    <label><input type="checkbox" name="zoom-variants" value="16" checked> 16</label>
+                                    <label><input type="checkbox" name="zoom-variants" value="18" checked> 18</label>
+                                    <label><input type="checkbox" name="zoom-variants" value="20"> 20</label>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="latitude">Latitude:</label>
@@ -133,6 +158,7 @@
                     <thead>
                         <tr>
                             <th>Job ID</th>
+                            <th>Search Area</th>
                             <th>Job Name</th>
                             <th>Job Date</th>
                             <th>Status</th>
@@ -154,6 +180,79 @@ function hideSponsor() {
         sponsorSection.style.display = 'none';
     }
 }
+
+function applySearchArea(select) {
+    const selected = select.options[select.selectedIndex];
+    if (!selected || !selected.dataset.lat) {
+        return;
+    }
+
+    document.getElementById('latitude').value = selected.dataset.lat;
+    document.getElementById('longitude').value = selected.dataset.lon;
+    document.getElementById('radius').value = selected.dataset.radius;
+    document.getElementById('fastmode').checked = true;
+}
+
+function applyZoomPreset(select) {
+    document.getElementById('zoom').value = select.value;
+}
+
+function parseAreaRow(row) {
+    const parts = row.split(',');
+    if (parts.length < 5) {
+        return null;
+    }
+
+    return {
+        city: parts[0],
+        area: parts[1],
+        lat: parts[2],
+        lon: parts[3],
+        radius: parts[4],
+    };
+}
+
+async function loadSearchAreas() {
+    const select = document.getElementById('search-area');
+    if (!select) {
+        return;
+    }
+
+    const response = await fetch('/static/config/areas.csv');
+    const text = await response.text();
+    const groups = new Map();
+
+    text.trim().split(/\r?\n/).slice(1).forEach((row) => {
+        const area = parseAreaRow(row);
+        if (!area) {
+            return;
+        }
+
+        if (!groups.has(area.city)) {
+            const group = document.createElement('optgroup');
+            group.label = area.city;
+            groups.set(area.city, group);
+            select.appendChild(group);
+        }
+
+        const option = document.createElement('option');
+        option.value = `${area.area} (${area.city})`;
+        option.textContent = `${area.area} (${area.city})`;
+        option.dataset.lat = area.lat;
+        option.dataset.lon = area.lon;
+        option.dataset.radius = area.radius;
+        groups.get(area.city).appendChild(option);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadSearchAreas().catch(() => {
+        const select = document.getElementById('search-area');
+        if (select) {
+            select.disabled = true;
+        }
+    });
+});
 </script>
 </body>
 </html>

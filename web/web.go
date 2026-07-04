@@ -179,6 +179,39 @@ type formData struct {
 	Proxies  []string
 }
 
+var defaultPhotographyKeywords = []string{
+	"photographer",
+	"photography studio",
+	"photo studio",
+	"wedding photographer",
+	"pre wedding photographer",
+	"candid wedding photographer",
+	"event photographer",
+	"birthday photographer",
+	"baby photographer",
+	"newborn photographer",
+	"maternity photographer",
+	"portrait photographer",
+	"portrait studio",
+	"fashion photographer",
+	"product photographer",
+	"commercial photographer",
+	"corporate photographer",
+	"passport photo studio",
+	"photo lab",
+	"photo printing studio",
+	"videographer",
+	"wedding videographer",
+	"drone photographer",
+	"engagement photographer",
+	"couple photoshoot",
+	"family photographer",
+	"model portfolio photographer",
+	"industrial photographer",
+	"real estate photographer",
+	"food photographer",
+}
+
 type ctxKey string
 
 const idCtxKey ctxKey = "id"
@@ -228,11 +261,11 @@ func (s *Server) index(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := formData{
-		Name:     "",
+		Name:     "Pune Mumbai photographers",
 		MaxTime:  "10m",
-		Keywords: []string{},
+		Keywords: defaultPhotographyKeywords,
 		Language: "en",
-		Zoom:     15,
+		Zoom:     16,
 		FastMode: false,
 		Radius:   10000,
 		Lat:      "0",
@@ -301,6 +334,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 	}
 
 	newJob.Data.Lang = r.Form.Get("lang")
+	newJob.Data.SearchArea = r.Form.Get("search-area")
 
 	newJob.Data.Zoom, err = strconv.Atoi(r.Form.Get("zoom"))
 	if err != nil {
@@ -351,21 +385,79 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = s.svc.Create(r.Context(), &newJob)
+	zoomValues, err := parseZoomValues(r.Form["zoom-variants"], newJob.Data.Zoom)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusUnprocessableEntity)
 
 		return
 	}
 
-	tmpl, ok := s.tmpl["static/templates/job_row.html"]
+	jobs := make([]Job, 0, len(zoomValues))
+	for _, zoom := range zoomValues {
+		job := newJob
+		job.ID = uuid.New().String()
+		job.Data.Zoom = zoom
+
+		if len(zoomValues) > 1 {
+			job.Name = fmt.Sprintf("%s (zoom %d)", newJob.Name, zoom)
+		}
+
+		err = s.svc.Create(r.Context(), &job)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+
+			return
+		}
+
+		jobs = append(jobs, job)
+	}
+
+	tmpl, ok := s.tmpl["static/templates/job_rows.html"]
 	if !ok {
 		http.Error(w, "missing tpl", http.StatusInternalServerError)
 
 		return
 	}
 
-	_ = tmpl.Execute(w, newJob)
+	_ = tmpl.Execute(w, jobs)
+}
+
+func parseZoomValues(values []string, fallback int) ([]int, error) {
+	if fallback < 1 || fallback > 21 {
+		return nil, fmt.Errorf("zoom must be between 1 and 21")
+	}
+
+	seen := make(map[int]struct{})
+	zooms := make([]int, 0, len(values))
+
+	for _, value := range values {
+		value = strings.TrimSpace(value)
+		if value == "" {
+			continue
+		}
+
+		zoom, err := strconv.Atoi(value)
+		if err != nil {
+			return nil, fmt.Errorf("invalid zoom variation")
+		}
+
+		if zoom < 1 || zoom > 21 {
+			return nil, fmt.Errorf("zoom variation must be between 1 and 21")
+		}
+
+		if _, ok := seen[zoom]; ok {
+			continue
+		}
+
+		seen[zoom] = struct{}{}
+		zooms = append(zooms, zoom)
+	}
+
+	if len(zooms) == 0 {
+		return []int{fallback}, nil
+	}
+
+	return zooms, nil
 }
 
 func (s *Server) getJobs(w http.ResponseWriter, r *http.Request) {

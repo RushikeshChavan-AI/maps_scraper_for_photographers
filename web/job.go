@@ -62,6 +62,7 @@ func (j *Job) Validate() error {
 
 type JobData struct {
 	Keywords     []string      `json:"keywords"`
+	SearchArea   string        `json:"search_area"`
 	Lang         string        `json:"lang"`
 	Zoom         int           `json:"zoom"`
 	Lat          string        `json:"lat"`

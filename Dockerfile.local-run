@@ -1,0 +1,9 @@
+FROM golang:1.26.4-trixie AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 go build -ldflags="-w -s" -o /usr/bin/google-maps-scraper
+
+FROM gosom/google-maps-scraper:latest
+COPY --from=builder /usr/bin/google-maps-scraper /usr/bin/google-maps-scraper

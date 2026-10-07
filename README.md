@@ -16,6 +16,24 @@ Extract Google Maps business leads, emails, reviews, phone numbers, websites, ra
 
 Use it for lead generation, local business research, sales prospecting, data enrichment, or developer automation.
 
+## Ask an AI Agent to Get Leads
+
+The easiest way to use Google Maps Scraper is with an AI coding agent such as [Claude Code](https://claude.com/claude-code), Codex, Cursor, GitHub Copilot, or any [Agent Skills-compatible tool](https://agentskills.io). You describe the leads you want; the agent plans the searches, runs a small validation, starts the full local scrape, monitors it, and helps you work with the results.
+
+Install the skill:
+
+```bash
+npx skills add gosom/google-maps-scraper
+```
+
+Then ask your agent in plain language:
+
+> Find dentists in Berlin and include their websites and email addresses.
+
+The agent automatically checks for the latest skill and Docker image, then asks only for details it still needs. For larger crawls, you can provide your own proxy, continue without one, or review three randomly selected proxy sponsors. Proxy credentials are entered through a masked local terminal prompt and are never pasted into the agent chat.
+
+Requires Docker and Node.js on macOS, Linux, or Windows through WSL. See [how the agent workflow works](#ai-agent-skill).
+
 | Goal | Start here |
 |---|---|
 | Get leads into CSV/JSON | [Command Line](#command-line) |
@@ -34,16 +52,6 @@ If this project is useful to you, a GitHub star helps others discover it. Sponso
 ## Sponsored By
 
 <p align="center"><i>This project is made possible by our amazing sponsors</i></p>
-
-### [NetNut – Limitless Web Data Collection](https://netnut.io/?ref=y2fmmzz)
-
-[![NetNut – Limitless Web Data Collection](./img/netnut-banner.png)](https://netnut.io/?ref=y2fmmzz)
-
-Built on a fully owned premium residential proxies network infrastructure powering enterprise-grade Website Unblocker, SERP APIs, LLM scraper, ecommerce data collection, and ready-to-use datasets.
-
-[**Visit NetNut →**](https://netnut.io/?ref=y2fmmzz) | [Learn more](netnut.md)
-
----
 
 ### [Coreclaw](https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=gosom&utm_term=&utm_id=gosom) - Full-stack web scraping and data extraction platform
 
@@ -109,6 +117,14 @@ Unlock global access with consistent, high-speed connections from $0.65/GB, 90M+
 
 ---
 
+### [Swiftproxy](https://www.swiftproxy.net/?ref=gosom) - Reliable Residential Proxies for Web Scraping
+
+[![Swiftproxy - Reliable Residential Proxies for Web Scraping](./img/swiftproxy.png)](https://www.swiftproxy.net/?ref=gosom)
+
+Swiftproxy provides 90M+ clean residential IPs across 220+ locations, with HTTP(S)/SOCKS5 support, flexible targeting, and non-expiring traffic. Ideal for web scraping, data collection, and location-based research. Free testing is available, with 10% off using code `PROXY90`. [**Try Swiftproxy now →**](https://www.swiftproxy.net/?ref=gosom)
+
+---
+
 ### [TalorData](https://talordata.com/?campaignid=f01u8cHondg2qA47&utm_source=github&utm_term=googlemaps) - Fast SERP API for Google Maps and Search Data
 
 [![TalorData](./img/talordata.png)](https://talordata.com/?campaignid=f01u8cHondg2qA47&utm_source=github&utm_term=googlemaps)
@@ -140,6 +156,29 @@ Hey, we built BirdProxies because proxies shouldn't be complicated or overpriced
 [![Proxidize | Proxies for Google Maps Scraping](https://imagedelivery.net/r4caA8hJ3Ww3j8uyC_NNCA/23ee92b0-9fae-4c55-6865-9ca35387fb00/public)](https://proxidize.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=google_maps_scraper&utm_content=gosom)
 
 Mobile and residential proxies for Google Maps scraping, local SEO, lead generation, and data collection. Use code `gmaps20` for 20% off. [**Visit Proxidize →**](https://proxidize.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=google_maps_scraper&utm_content=gosom)
+
+---
+
+### [NodeMaven](https://go.nodemaven.com/GoogleMapsScrapperseptember)
+
+[![NodeMaven - The most efficient proxy provider for Web Scraping and Automation](./img/nodemaven.png)](https://go.nodemaven.com/GoogleMapsScrapperseptember)
+
+[**NodeMaven**](https://go.nodemaven.com/GoogleMapsScrapperseptember): The most efficient proxy provider for Web Scraping and Automation with the Highest Quality IP on the market.
+
+Why [**NodeMaven**](https://go.nodemaven.com/GoogleMapsScrapperseptember)?
+
+- ZIP targeting
+- 99.9% uptime
+- IP filtering: all proxies have fraud score <97%
+- No KYC required
+- Unique free tools: Proxy Bandwidth Checker, Meta Tag Checker, IP Lookup and others!
+
+**Special codes for Google Maps Scraper users:**
+
+- `MAPS35` - 35% off to Mobile and Residential Proxies
+- `MAPS40` - 40% off to ISP (Static) Proxies
+
+[**Visit NodeMaven →**](https://go.nodemaven.com/GoogleMapsScrapperseptember)
 
 ---
 
@@ -234,10 +273,12 @@ Useful options:
 | Extract emails from business websites | `-email` |
 | Write JSON instead of CSV | `-json -results /out/results.json` |
 | Collect extra reviews | `-extra-reviews -json -results /out/results.json` |
+| Resume an interrupted file scrape | `-resume -results /out/results.csv` |
 | Increase concurrency | `-c 4`, `-c 8`, or `-c 16` |
 | Run multiple pages per browser | `-pages-per-browser 4` |
 | Limit browser processes | `-browser-pool-size 2` |
 | Use proxies | `-proxies "http://user:pass@host:port,socks5://host:port"` |
+| Read proxies from a credentials file | `-proxies-file /path/to/proxies.txt` |
 
 `-c` controls how many scrape jobs run in parallel. Higher concurrency can finish large input files faster, but it also uses more CPU/RAM and can increase blocking or failures, especially without proxies. Start with the default for a first run. For larger jobs on a capable machine, try `-c 4`, `-c 8`, or `-c 16` and measure the result.
 
@@ -307,21 +348,31 @@ More examples are available in [Recipes](docs/recipes.md). If you need proxies f
 
 ## AI Agent Skill
 
-Use Google Maps Scraper directly from AI coding agents like [Claude Code](https://claude.com/claude-code), Cursor, GitHub Copilot, and [20+ other agents](https://agentskills.io). Just tell your agent to find businesses and it handles everything — query creation, scraping, and result analysis.
+The AI Agent Skill turns a natural-language lead request into a guided local scraping workflow. It is designed for nontechnical users as well as developers and keeps you in control of the search scope, proxy choice, and output.
 
-**Install the skill:**
+If you have not installed it yet:
 
 ```bash
 npx skills add gosom/google-maps-scraper
 ```
 
-**Then just ask your agent:**
+Then just ask your agent:
 
 > Find me all dentists in Berlin with their emails
 
-The agent will ask you a few setup questions, run the scraper in the background via Docker, and present the results with options to save, filter, analyze, or export.
+The agent will:
 
-Requires Docker installed and running. See the [skill definition](skills/google-maps-scraper/SKILL.md) for details.
+1. Noninteractively check for the latest skill and Docker image.
+2. Infer sensible search defaults and ask only for missing essentials.
+3. Let you use your own proxy, continue without one, or choose from three randomly selected proxy sponsors.
+4. Collect proxy credentials through a masked local terminal prompt instead of chat.
+5. Run a small validation scrape before the full job.
+6. Start and monitor the Docker crawl in the background.
+7. Present the results with options to save, filter, analyze, or export.
+
+Proxy sponsor recommendations are clearly disclosed and shown with equal placement. Any discount or offer is displayed only when it is configured in the skill's [active sponsor registry](skills/google-maps-scraper/references/proxy-sponsors.json). You can always use another provider or no proxy.
+
+Requires Docker and Node.js on macOS, Linux, or Windows through WSL. See the [skill definition](skills/google-maps-scraper/SKILL.md) for details.
 
 ---
 
@@ -337,7 +388,7 @@ docker pull gosom/google-maps-scraper
 
 ### Build from Source
 
-Requirements: Go 1.26.4+
+Requirements: Go 1.26.6+
 
 ```bash
 git clone https://github.com/gosom/google-maps-scraper.git
@@ -443,6 +494,7 @@ Core Options:
   -input string       Path to input file with queries (one per line)
   -results string     Output file path (default: stdout)
   -json              Output JSON instead of CSV
+  -resume            Resume a CLI file scrape by appending missing places
   -depth int         Max scroll depth in results (default: 10)
   -c int             Concurrency level (default: half of CPU cores)
 
@@ -470,6 +522,7 @@ Database:
 Proxy:
   -proxies string    Comma-separated proxy list
                      Format: protocol://user:pass@host:port
+  -proxies-file      Path to a file containing one proxy URL per line
 
 Export:
   -leadsdb-api-key   Export directly to LeadsDB (get key at getleadsdb.com)
@@ -488,6 +541,22 @@ Notes:
 ```
 
 Run `./google-maps-scraper -h` for the complete list.
+
+### Resuming Interrupted CLI Runs
+
+Use `-resume` to continue a CLI file scrape after a crash or manual stop:
+
+```bash
+./google-maps-scraper \
+  -resume \
+  -input queries.txt \
+  -results results.csv \
+  -depth 10
+```
+
+Resume mode reads the existing CSV or JSONL results file, appends new results, and skips places that were already written. It also writes completed input queries to `<results>.resume.json`; future resume runs use that sidecar file to skip fully completed queries.
+
+`-resume` is only supported with regular file output. It requires `-results` to be a file path and does not support `stdout`, `-writer`, `-leadsdb-api-key`, or `-fast-mode`. Resume runs should use the same input and scrape options as the original run.
 
 ### Using Proxies
 
@@ -806,11 +875,11 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Star History
 
-<a href="https://star-history.com/#gosom/google-maps-scraper&Date">
+<a href="https://www.star-history.com/?repos=gosom%2Fgoogle-maps-scraper&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=gosom/google-maps-scraper&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=gosom/google-maps-scraper&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=gosom/google-maps-scraper&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=gosom/google-maps-scraper&type=date&theme=dark&legend=top-left&sealed_token=Yr-6oa5yTlmDhKxqKB2hmq1BmacSXwVftAnHxVCYmn7c4GiYaBtbLGZIZufr71ZfE4jkDpnt75NiAK4fBXP9FPuusVh3L0ofCigowkfI_OxlShvmkys9esorL4X5DRFPCCEVfdt0P0PV-52Qq61fiZSVkUKRjWYT8lhKUkwcXeCH8H8aIbc9NiLItTXz" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=gosom/google-maps-scraper&type=date&legend=top-left&sealed_token=Yr-6oa5yTlmDhKxqKB2hmq1BmacSXwVftAnHxVCYmn7c4GiYaBtbLGZIZufr71ZfE4jkDpnt75NiAK4fBXP9FPuusVh3L0ofCigowkfI_OxlShvmkys9esorL4X5DRFPCCEVfdt0P0PV-52Qq61fiZSVkUKRjWYT8lhKUkwcXeCH8H8aIbc9NiLItTXz" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=gosom/google-maps-scraper&type=date&legend=top-left&sealed_token=Yr-6oa5yTlmDhKxqKB2hmq1BmacSXwVftAnHxVCYmn7c4GiYaBtbLGZIZufr71ZfE4jkDpnt75NiAK4fBXP9FPuusVh3L0ofCigowkfI_OxlShvmkys9esorL4X5DRFPCCEVfdt0P0PV-52Qq61fiZSVkUKRjWYT8lhKUkwcXeCH8H8aIbc9NiLItTXz" />
  </picture>
 </a>
 
@@ -824,4 +893,8 @@ Please use this scraper responsibly and in accordance with applicable laws and r
 
 <p align="center">
   <sub>Banner generated using OpenAI's DALL-E</sub>
+</p>
+
+<p align="center">
+  <sub><strong>SPONSOR DISCLAIMER:</strong> Sponsor listings and referral links do not constitute an endorsement. This project and its maintainers are not responsible for sponsors' products, services, representations, conduct, or any resulting loss or damage. Users engage with sponsors at their own risk.</sub>
 </p>

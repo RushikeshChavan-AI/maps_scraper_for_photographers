@@ -129,7 +129,7 @@ func New(svc *Service, addr string) (*Server, error) {
 		ans.download(w, r)
 	})
 
-	handler := securityHeaders(mux)
+	handler := loggingMiddleware(securityHeaders(mux))
 	ans.srv.Handler = handler
 
 	tmplsKeys := []string{
@@ -293,7 +293,9 @@ func (s *Server) index(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
+	log.Printf("[SCRAPE] Received %s request from %s", r.Method, r.RemoteAddr)
 	if r.Method != http.MethodPost {
+		log.Printf("[SCRAPE] Rejected non-POST method: %s", r.Method)
 		http.Error(w, methodNotAllowedMessage, http.StatusMethodNotAllowed)
 
 		return
@@ -301,6 +303,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	err := r.ParseForm()
 	if err != nil {
+		log.Printf("[SCRAPE] Error parsing form: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 
 		return
@@ -318,12 +321,14 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	maxTime, err := time.ParseDuration(maxTimeStr)
 	if err != nil {
-		http.Error(w, "invalid max time", http.StatusUnprocessableEntity)
+		log.Printf("[SCRAPE] Validation failed: invalid max time '%s': %v", maxTimeStr, err)
+		http.Error(w, "invalid max time: "+err.Error(), http.StatusUnprocessableEntity)
 
 		return
 	}
 
 	if maxTime < time.Minute*3 {
+		log.Printf("[SCRAPE] Validation failed: max time must be >= 3m, got '%s'", maxTimeStr)
 		http.Error(w, "max time must be more than 3m", http.StatusUnprocessableEntity)
 
 		return
@@ -333,6 +338,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	keywordsStr, ok := r.Form["keywords"]
 	if !ok {
+		log.Printf("[SCRAPE] Validation failed: missing keywords")
 		http.Error(w, "missing keywords", http.StatusUnprocessableEntity)
 
 		return
@@ -353,6 +359,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	newJob.Data.Zoom, err = strconv.Atoi(r.Form.Get("zoom"))
 	if err != nil {
+		log.Printf("[SCRAPE] Validation failed: invalid zoom '%s': %v", r.Form.Get("zoom"), err)
 		http.Error(w, "invalid zoom", http.StatusUnprocessableEntity)
 
 		return
@@ -364,6 +371,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	newJob.Data.Radius, err = strconv.Atoi(r.Form.Get("radius"))
 	if err != nil {
+		log.Printf("[SCRAPE] Validation failed: invalid radius '%s': %v", r.Form.Get("radius"), err)
 		http.Error(w, "invalid radius", http.StatusUnprocessableEntity)
 
 		return
@@ -374,6 +382,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	newJob.Data.Depth, err = strconv.Atoi(r.Form.Get("depth"))
 	if err != nil {
+		log.Printf("[SCRAPE] Validation failed: invalid depth '%s': %v", r.Form.Get("depth"), err)
 		http.Error(w, "invalid depth", http.StatusUnprocessableEntity)
 
 		return
@@ -395,6 +404,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	err = newJob.Validate()
 	if err != nil {
+		log.Printf("[SCRAPE] Validation failed on newJob.Validate: %v", err)
 		http.Error(w, err.Error(), http.StatusUnprocessableEntity)
 
 		return
@@ -402,6 +412,7 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 	zoomValues, err := parseZoomValues(r.Form["zoom-variants"], newJob.Data.Zoom)
 	if err != nil {
+		log.Printf("[SCRAPE] Validation failed on parseZoomValues: %v", err)
 		http.Error(w, err.Error(), http.StatusUnprocessableEntity)
 
 		return
@@ -419,17 +430,20 @@ func (s *Server) scrape(w http.ResponseWriter, r *http.Request) {
 
 		err = s.svc.Create(r.Context(), &job)
 		if err != nil {
+			log.Printf("[SCRAPE] Error creating job %s: %v", job.ID, err)
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 
 			return
 		}
 
+		log.Printf("[SCRAPE] Created job ID=%s Name=%q Zoom=%d", job.ID, job.Name, zoom)
 		jobs = append(jobs, job)
 	}
 
 	_ = jobs
 
 	if err := s.renderJobsPage(r.Context(), w, 1); err != nil {
+		log.Printf("[SCRAPE] Error rendering jobs page: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
@@ -809,5 +823,14 @@ func securityHeaders(next http.Handler) http.Handler {
 				"connect-src 'self'")
 
 		next.ServeHTTP(w, r)
+	})
+}
+
+func loggingMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		start := time.Now()
+		log.Printf("[HTTP] %s %s from %s", r.Method, r.URL.Path, r.RemoteAddr)
+		next.ServeHTTP(w, r)
+		log.Printf("[HTTP] Completed %s %s in %v", r.Method, r.URL.Path, time.Since(start))
 	})
 }

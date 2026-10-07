@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Maps Scraper</title>
     <link rel="stylesheet" href="/static/css/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.6/htmx.min.js"></script>
+    <script src="/static/js/htmx.min.js"></script>
 </head>
 <body>
     <div class="app-container">
@@ -41,12 +41,12 @@
             <div class="sidebar">
                 <div id="error-container" class="error-message"></div>
                 <form 
+                    action="/scrape"
+                    method="POST"
                     hx-post="/scrape" 
-                    hx-target="#job-tbody"
-                    hx-swap="outerHTML"
+                    hx-target="#job-table-container"
+                    hx-swap="innerHTML"
                     hx-indicator="#spinner"
-                    hx-on::before-request="document.getElementById('error-container').innerHTML = ''"
-                    hx-on::after-request="if(!event.detail.successful) document.getElementById('error-container').innerHTML = event.detail.xhr.responseText"
                 >
                     
                     <fieldset>
@@ -154,22 +154,9 @@
             </div>
             <div class="content">
                 <div id="spinner" class="spinner"></div>
-                <table id="job-table">
-                    <thead>
-                        <tr>
-                            <th>Job ID</th>
-                            <th>Search Area</th>
-                            <th>Job Name</th>
-                            <th>Job Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="job-tbody" hx-get="/jobs" hx-trigger="load" hx-swap="outerHTML">
-                        <!-- Job rows will be inserted here by HTMX -->
-                    </tbody>
-                </table>
-                <div id="pagination-container"></div>
+                <div id="job-table-container" hx-get="/jobs" hx-trigger="load, every 10s" hx-swap="innerHTML">
+                    <!-- Loaded dynamically via HTMX -->
+                </div>
             </div>
         </main>
     </div>
@@ -253,6 +240,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (select) {
             select.disabled = true;
         }
+    });
+
+    document.body.addEventListener('htmx:beforeRequest', function(evt) {
+        console.log('[HTMX] Sending request to:', evt.detail.pathInfo.requestPath);
+        const errDiv = document.getElementById('error-container');
+        if (errDiv) errDiv.innerHTML = '';
+    });
+
+    document.body.addEventListener('htmx:afterRequest', function(evt) {
+        console.log('[HTMX] Response received:', evt.detail.xhr ? evt.detail.xhr.status : 'No XHR');
+        if (!evt.detail.successful) {
+            const msg = (evt.detail.xhr && evt.detail.xhr.responseText) ? evt.detail.xhr.responseText : 'Failed to start scrape';
+            console.error('[HTMX Error]', msg);
+            const errDiv = document.getElementById('error-container');
+            if (errDiv) errDiv.innerHTML = '<div style="color:red;padding:8px;background:#fee;border-radius:4px;margin-bottom:8px;">' + msg + '</div>';
+        }
+    });
+
+    document.body.addEventListener('htmx:targetError', function(evt) {
+        console.error('[HTMX targetError]', evt.detail.target, evt.detail.elt);
     });
 });
 </script>

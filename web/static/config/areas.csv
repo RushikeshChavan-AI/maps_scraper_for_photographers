@@ -191,3 +191,276 @@ Mumbai,Bhandup East,19.1466,72.9484,2500
 Mumbai,Nahur,19.1562,72.9445,2200
 Mumbai,Mulund West,19.1726,72.9425,3500
 Mumbai,Mulund East,19.1686,72.9564,3000
+Nashik,Nashik City Center,19.9975,73.7898,3000
+Nashik,College Road,20.0063,73.7634,2200
+Nashik,Gangapur Road,20.0210,73.7540,2500
+Nashik,Panchavati,20.0109,73.7997,2500
+Nashik,Indira Nagar,19.9678,73.7745,2800
+Nashik,Cidco,19.9723,73.7523,3000
+Nashik,Satpur,19.9961,73.7291,3000
+Nashik,Ambad,19.9482,73.7380,3000
+Nashik,Dwarka,19.9880,73.7991,2200
+Nashik,MG Road,19.9942,73.7876,1800
+Delhi NCR,Connaught Place,28.6315,77.2167,2200
+Delhi NCR,Chandni Chowk,28.6506,77.2303,2000
+Delhi NCR,Karol Bagh,28.6514,77.1907,2200
+Delhi NCR,Lajpat Nagar,28.5700,77.2370,2500
+Delhi NCR,South Extension,28.5684,77.2205,2200
+Delhi NCR,Hauz Khas,28.5494,77.2001,2500
+Delhi NCR,Saket,28.5244,77.2104,2500
+Delhi NCR,Vasant Kunj,28.5293,77.1527,3500
+Delhi NCR,Greater Kailash,28.5482,77.2426,2500
+Delhi NCR,Dwarka,28.5921,77.0460,4000
+Delhi NCR,Rohini,28.7159,77.1171,4000
+Delhi NCR,Pitampura,28.6990,77.1384,3000
+Delhi NCR,Rajouri Garden,28.6415,77.1209,2500
+Delhi NCR,Janakpuri,28.6219,77.0878,3000
+Delhi NCR,Preet Vihar,28.6387,77.2965,2500
+Delhi NCR,Laxmi Nagar,28.6308,77.2773,2200
+Delhi NCR,Mayur Vihar,28.6080,77.2954,3000
+Delhi NCR,Shahdara,28.6738,77.2905,3000
+Delhi NCR,Cyber City Gurgaon,28.4950,77.0895,3000
+Delhi NCR,Golf Course Road Gurgaon,28.4595,77.1025,3500
+Delhi NCR,Sector 29 Gurgaon,28.4682,77.0622,2500
+Delhi NCR,Sohna Road Gurgaon,28.4112,77.0396,4000
+Delhi NCR,Sector 18 Noida,28.5708,77.3260,2500
+Delhi NCR,Sector 62 Noida,28.6208,77.3639,3500
+Delhi NCR,Noida Extension,28.6095,77.4357,4000
+Delhi NCR,Greater Noida,28.4744,77.5040,5000
+Delhi NCR,Indirapuram Ghaziabad,28.6419,77.3695,3000
+Delhi NCR,Vaishali Ghaziabad,28.6496,77.3396,2500
+Delhi NCR,Raj Nagar Ghaziabad,28.6869,77.4398,3000
+Delhi NCR,Sector 15 Faridabad,28.4069,77.3218,3000
+Delhi NCR,NIT Faridabad,28.3845,77.3005,3500
+Jaipur,MI Road,26.9185,75.8115,2200
+Jaipur,Johari Bazaar,26.9216,75.8267,2000
+Jaipur,Bapu Bazaar,26.9189,75.8236,1800
+Jaipur,C Scheme,26.9103,75.8016,2200
+Jaipur,Malviya Nagar,26.8530,75.8166,3000
+Jaipur,Vaishali Nagar,26.9104,75.7423,3500
+Jaipur,Mansarovar,26.8580,75.7656,3500
+Jaipur,Raja Park,26.8996,75.8286,2200
+Jaipur,Tonk Road,26.8722,75.7997,3000
+Jaipur,Amer Road,26.9535,75.8450,3000
+Jaipur,Civil Lines,26.9066,75.7877,2200
+Jaipur,Jagatpura,26.8228,75.8471,4000
+Jaipur,Sitapura,26.7778,75.8458,4000
+Jaipur,Vidhyadhar Nagar,26.9634,75.7797,3500
+Jaipur,Ajmer Road,26.8850,75.7266,4000
+Hyderabad,Banjara Hills,17.4156,78.4357,2500
+Hyderabad,Jubilee Hills,17.4319,78.4073,3000
+Hyderabad,Madhapur,17.4483,78.3915,3000
+Hyderabad,Gachibowli,17.4401,78.3489,3500
+Hyderabad,Kondapur,17.4699,78.3578,3000
+Hyderabad,Hitec City,17.4435,78.3772,2500
+Hyderabad,Secunderabad,17.4399,78.4983,3000
+Hyderabad,Begumpet,17.4447,78.4664,2500
+Hyderabad,Ameerpet,17.4375,78.4482,2200
+Hyderabad,Somajiguda,17.4265,78.4578,2000
+Hyderabad,Abids,17.3888,78.4744,2200
+Hyderabad,Charminar,17.3616,78.4747,2000
+Hyderabad,Himayatnagar,17.4024,78.4870,2200
+Hyderabad,Kukatpally,17.4948,78.3996,3500
+Hyderabad,Miyapur,17.4968,78.3564,3000
+Hyderabad,Dilsukhnagar,17.3688,78.5247,3000
+Hyderabad,LB Nagar,17.3457,78.5522,3500
+Hyderabad,Manikonda,17.3994,78.3789,3000
+Bengaluru,Indiranagar,12.9784,77.6408,2500
+Bengaluru,Koramangala,12.9352,77.6245,2800
+Bengaluru,MG Road,12.9756,77.6066,2000
+Bengaluru,Brigade Road,12.9719,77.6070,1800
+Bengaluru,Jayanagar,12.9308,77.5838,3000
+Bengaluru,JP Nagar,12.9063,77.5857,3000
+Bengaluru,HSR Layout,12.9121,77.6446,3000
+Bengaluru,Whitefield,12.9698,77.7500,4500
+Bengaluru,Marathahalli,12.9591,77.6974,3000
+Bengaluru,Bellandur,12.9304,77.6784,3000
+Bengaluru,Electronic City,12.8452,77.6602,4000
+Bengaluru,Malleshwaram,13.0031,77.5643,2500
+Bengaluru,Rajajinagar,12.9982,77.5530,2800
+Bengaluru,BTM Layout,12.9166,77.6101,2500
+Bengaluru,Banashankari,12.9255,77.5468,3500
+Bengaluru,Hebbal,13.0358,77.5970,3500
+Bengaluru,Yelahanka,13.1007,77.5963,4000
+Bengaluru,Basavanagudi,12.9421,77.5753,2500
+Bengaluru,Kalyan Nagar,13.0280,77.6401,3000
+Ahmedabad,Navrangpura,23.0373,72.5530,2200
+Ahmedabad,CG Road,23.0322,72.5567,2000
+Ahmedabad,SG Highway,23.0642,72.5186,4500
+Ahmedabad,Prahlad Nagar,23.0123,72.5085,2500
+Ahmedabad,Bodakdev,23.0396,72.5173,2500
+Ahmedabad,Satellite,23.0276,72.5190,2500
+Ahmedabad,Vastrapur,23.0360,72.5284,2200
+Ahmedabad,Paldi,23.0135,72.5630,2200
+Ahmedabad,Maninagar,22.9982,72.6025,2800
+Ahmedabad,Bopal,23.0336,72.4633,3500
+Ahmedabad,Thaltej,23.0583,72.5074,3000
+Ahmedabad,Gota,23.1065,72.5401,3500
+Ahmedabad,Chandkheda,23.1118,72.5854,3500
+Ahmedabad,Ashram Road,23.0402,72.5714,2500
+Ahmedabad,Naranpura,23.0560,72.5470,2500
+Ahmedabad,Ellisbridge,23.0238,72.5668,2000
+Ahmedabad,Gandhinagar,23.2156,72.6369,4500
+Chandigarh,Sector 17,30.7415,76.7794,1800
+Chandigarh,Sector 22,30.7317,76.7725,1800
+Chandigarh,Sector 35,30.7226,76.7570,2000
+Chandigarh,Sector 8,30.7423,76.7972,1800
+Chandigarh,Sector 9,30.7479,76.7901,1800
+Chandigarh,Sector 26,30.7258,76.8118,2000
+Chandigarh,Sector 34,30.7208,76.7694,1800
+Chandigarh,Sector 43,30.7135,76.7454,2000
+Chandigarh,Manimajra,30.7200,76.8456,2500
+Chandigarh,Mohali Phase 3B2,30.7067,76.7203,2000
+Chandigarh,Mohali Phase 5,30.7099,76.7098,2000
+Chandigarh,Mohali Phase 7,30.7001,76.7077,2200
+Chandigarh,Mohali Sector 70,30.6865,76.7118,2500
+Chandigarh,Mohali Sector 82 Airport Road,30.6655,76.7450,3500
+Chandigarh,Panchkula Sector 8,30.6975,76.8528,2000
+Chandigarh,Panchkula Sector 11,30.6883,76.8542,2000
+Chandigarh,Zirakpur,30.6425,76.8173,3500
+Kolkata,Park Street,22.5516,88.3524,2000
+Kolkata,Salt Lake Sector 1,22.5937,88.4116,2500
+Kolkata,Salt Lake Sector 5,22.5726,88.4312,2800
+Kolkata,New Town,22.5958,88.4792,4000
+Kolkata,Ballygunge,22.5280,88.3653,2200
+Kolkata,Gariahat,22.5188,88.3658,2000
+Kolkata,Alipore,22.5317,88.3312,2200
+Kolkata,Jadavpur,22.4988,88.3718,2800
+Kolkata,Behala,22.4983,88.3186,3500
+Kolkata,Shyambazar,22.6023,88.3712,2200
+Kolkata,Howrah,22.5958,88.2636,3500
+Kolkata,Dum Dum,22.6433,88.4325,3500
+Kolkata,Bhowanipore,22.5322,88.3456,2000
+Kolkata,Tollygunge,22.4998,88.3458,2800
+Kolkata,Lake Gardens,22.5054,88.3570,2000
+Surat,Ghod Dod Road,21.1764,72.8055,2200
+Surat,Athwa Lines,21.1723,72.8012,2500
+Surat,Vesu,21.1442,72.7758,3500
+Surat,Piplod,21.1610,72.7752,2500
+Surat,Adajan,21.1963,72.7933,3000
+Surat,Pal,21.1925,72.7667,3000
+Surat,Varachha,21.2185,72.8634,3500
+Surat,Katargam,21.2335,72.8276,3000
+Surat,Ring Road,21.1922,72.8378,2500
+Surat,Althan,21.1565,72.8123,2800
+Surat,Rander,21.2173,72.7885,2500
+Surat,City Light,21.1678,72.7925,2000
+Surat,Nanpura,21.1895,72.8173,2000
+Udaipur,Lake Pichola,24.5760,73.6800,2000
+Udaipur,Fateh Sagar Lake,24.6033,73.6738,2200
+Udaipur,Old City Lal Ghat,24.5802,73.6835,1600
+Udaipur,Panchwati,24.5967,73.6931,2000
+Udaipur,Hiran Magri Sector 3,24.5684,73.7142,2500
+Udaipur,Hiran Magri Sector 4,24.5615,73.7225,2500
+Udaipur,Hiran Magri Sector 5,24.5532,73.7288,2500
+Udaipur,Fatehpura,24.6105,73.6987,2200
+Udaipur,Sukhadia Circle,24.6015,73.6946,1800
+Udaipur,Shobhagpura,24.6189,73.7126,2500
+Udaipur,Bhuwana,24.6318,73.7170,3000
+Udaipur,Goverdhan Vilas,24.5423,73.6872,3000
+Udaipur,Bapu Bazaar,24.5854,73.6935,1800
+Goa,Panaji,15.4909,73.8278,3000
+Goa,Fontainhas Panaji,15.4967,73.8322,1500
+Goa,Miramar,15.4808,73.8118,2200
+Goa,Candolim,15.5180,73.7663,2500
+Goa,Calangute,15.5439,73.7553,2500
+Goa,Baga,15.5553,73.7517,2000
+Goa,Anjuna,15.5782,73.7425,3000
+Goa,Vagator,15.5986,73.7441,2500
+Goa,Morjim,15.6319,73.7371,3000
+Goa,Ashwem Mandrem,15.6602,73.7180,3500
+Goa,Margao,15.2832,73.9862,3500
+Goa,Colva,15.2798,73.9142,2800
+Goa,Benaulim,15.2588,73.9248,3000
+Goa,Varca,15.2215,73.9318,3000
+Goa,Cavelossim,15.1764,73.9452,3000
+Goa,Mapusa,15.5927,73.8152,3000
+Goa,Porvorim,15.5342,73.8276,2800
+Goa,Vasco da Gama,15.3959,73.8157,3500
+Chennai,T Nagar,13.0418,80.2341,2200
+Chennai,Mylapore,13.0368,80.2676,2200
+Chennai,Adyar,13.0012,80.2565,2500
+Chennai,Besant Nagar,12.9996,80.2690,2000
+Chennai,Anna Nagar,13.0850,80.2101,3000
+Chennai,Nungambakkam,13.0569,80.2425,2200
+Chennai,Alwarpet,13.0336,80.2514,2000
+Chennai,Velachery,12.9815,80.2180,3000
+Chennai,Thiruvanmiyur,12.9830,80.2594,2500
+Chennai,OMR Porur,13.0359,80.1567,3500
+Chennai,OMR Sholinganallur,12.9010,80.2279,4000
+Chennai,Kilpauk,13.0805,80.2394,2200
+Chennai,George Town,13.0934,80.2872,2500
+Chennai,Tambaram,12.9249,80.1000,4000
+Indore,Vijay Nagar,22.7533,75.8937,2800
+Indore,Palasia,22.7244,75.8839,2200
+Indore,New Palasia,22.7289,75.8821,2000
+Indore,Old Palasia,22.7198,75.8856,2000
+Indore,Rajwada,22.7186,75.8552,2000
+Indore,MG Road,22.7214,75.8710,2000
+Indore,AB Road,22.7420,75.8920,3000
+Indore,Bhawarkua,22.6934,75.8672,2500
+Indore,Annapurna,22.7001,75.8365,2500
+Indore,Sapna Sangeeta,22.7056,75.8712,2000
+Indore,Rau,22.6318,75.8080,3500
+Indore,Super Corridor,22.7667,75.8211,4000
+Indore,Khajrana,22.7380,75.9080,2800
+Lucknow,Hazratganj,26.8467,80.9462,2200
+Lucknow,Gomti Nagar,26.8529,80.9992,3500
+Lucknow,Gomti Nagar Extension,26.8322,81.0255,3500
+Lucknow,Aliganj,26.8872,80.9416,2800
+Lucknow,Indira Nagar,26.8791,80.9888,3000
+Lucknow,Mahanagar,26.8732,80.9535,2200
+Lucknow,Alambagh,26.8123,80.9023,3000
+Lucknow,Aminabad,26.8465,80.9264,1800
+Lucknow,Chowk,26.8687,80.9056,2200
+Lucknow,Jankipuram,26.9175,80.9482,3500
+Lucknow,Ashiyana,26.7901,80.9055,3000
+Lucknow,Vikas Nagar,26.8967,80.9634,2500
+Kochi,MG Road,9.9723,76.2829,2200
+Kochi,Marine Drive,9.9816,76.2758,2000
+Kochi,Fort Kochi,9.9658,76.2421,2200
+Kochi,Mattancherry,9.9577,76.2599,2000
+Kochi,Panampilly Nagar,9.9610,76.2974,2000
+Kochi,Kadavanthra,9.9678,76.3025,2000
+Kochi,Kaloor,9.9984,76.2996,2500
+Kochi,Palarivattom,10.0076,76.3115,2500
+Kochi,Edappally,10.0261,76.3125,3000
+Kochi,Kakkanad Infopark,10.0159,76.3639,3500
+Kochi,Vyttila,9.9674,76.3216,2500
+Kochi,Tripunithura,9.9469,76.3470,3000
+Kochi,Aluva,10.1076,76.3516,3500
+Bhopal,MP Nagar Zone 1,23.2332,77.4343,2000
+Bhopal,MP Nagar Zone 2,23.2356,77.4390,2000
+Bhopal,New Market TT Nagar,23.2335,77.4021,2200
+Bhopal,Arera Colony E1 to E4,23.2185,77.4300,2800
+Bhopal,Arera Colony E5 to E8,23.1978,77.4356,3000
+Bhopal,Kolar Road,23.1742,77.4190,3500
+Bhopal,Hoshangabad Road,23.1895,77.4612,4000
+Bhopal,Shahpura,23.2052,77.4278,2200
+Bhopal,Bairagarh Sant Hirdaram Nagar,23.2731,77.3421,3000
+Bhopal,Old City Chowk,23.2599,77.4042,2200
+Bhopal,Ayodhya Bypass,23.2721,77.4689,3500
+Nagpur,Dharampeth,21.1442,79.0628,2200
+Nagpur,Ramdaspeth,21.1378,79.0760,2000
+Nagpur,Dhantoli,21.1340,79.0838,2000
+Nagpur,Sitabuldi,21.1466,79.0830,1800
+Nagpur,Sadar,21.1610,79.0825,2200
+Nagpur,Civil Lines,21.1565,79.0689,2500
+Nagpur,Wardha Road,21.0967,79.0655,3500
+Nagpur,Pratap Nagar,21.1189,79.0552,2200
+Nagpur,Laxmi Nagar,21.1215,79.0654,2000
+Nagpur,Manish Nagar,21.0934,79.0825,2500
+Nagpur,Besur,21.0995,79.0988,2800
+Nagpur,Gandhibagh,21.1512,79.1089,2200
+Nagpur,Itwari,21.1542,79.1178,2200
+Jodhpur,Sardarpura,26.2750,73.0125,2200
+Jodhpur,Clock Tower Sardar Market,26.2952,73.0238,1800
+Jodhpur,Old City Blue City,26.2985,73.0189,1800
+Jodhpur,Ratanada,26.2736,73.0335,2200
+Jodhpur,Shastri Nagar,26.2705,73.0032,2500
+Jodhpur,Paota,26.3012,73.0425,2500
+Jodhpur,Mandore Road,26.3350,73.0410,3000
+Jodhpur,Chopasni Housing Board,26.2655,72.9754,3500
+Jodhpur,Pal Road,26.2482,72.9860,3500
+Jodhpur,Bhadwasia,26.3142,73.0610,3000
+Jodhpur,Basni Industrial Area,26.2305,73.0078,3500
